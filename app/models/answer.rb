@@ -1,5 +1,5 @@
 class Answer < ApplicationRecord
-	# associations
+  # associations
   belongs_to :question
   belongs_to :answer_set
 
