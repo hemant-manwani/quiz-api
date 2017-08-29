@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  timeout: 5000
+  pool: 5
+  port: 5432
+  host: localhost
+  username: postgres
+  password: postgres
+
+test:
+  <<: *default
+  database: 'api_quiz_test'
+
+development:
+  <<: *default
+  database: 'api_quiz_dev'
+
