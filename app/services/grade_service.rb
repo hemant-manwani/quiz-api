@@ -7,21 +7,21 @@ class GradeService
   def calculate_marks
     summary = []
     obtained_marks = 0
-  	@answers.each do |answer|
+    @answers.each do |answer|
       question = answer.question
-  		if answer.given_answer.sort.eql? question.correct_answer.sort
+      if answer.given_answer.sort.eql? question.correct_answer.sort
         status = 'correct'
         obtained_marks+= question.marks 
       else
         status = 'incorrect'
       end
       summary << {user: @answer_set.candidate_name, result: status, question_id: question.id}
-  	end
+    end
     return obtained_marks.to_f, summary, calculate_grade(obtained_marks.to_f)
   end
 
   def calculate_grade(marks)
-    avg = (marks.to_f / @answer_set.questions.sum(:marks).to_f) * 100 
+    avg = (marks.to_f / @answer_set.questions.sum(:marks).to_f) * 100
     case avg
     when 10..30
       "D"
@@ -33,7 +33,6 @@ class GradeService
       "A"
     else
       "A+"
-    end  
-
-  end  
+    end
+  end
 end
