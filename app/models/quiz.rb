@@ -5,5 +5,5 @@ class Quiz < ApplicationRecord
   has_many :questions
 
   #validations
-  validates :title, :description, presence: true	 
+  validates :title, :description, :maximum_time, presence: true	 
 end
