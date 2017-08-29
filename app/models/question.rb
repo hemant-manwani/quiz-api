@@ -11,5 +11,5 @@ class Question < ApplicationRecord
     if quiz.questions.count >= quiz.total_questions
       errors.add(:base, "Exceeded question limit")
     end
-  end	
+  end
 end

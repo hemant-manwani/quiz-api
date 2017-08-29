@@ -31,8 +31,10 @@ class GradeService
       "B"
     when 75..90
       "A"
-    else
+    when 90..100
       "A+"
-    end
+    else
+      "F"
+    end  
   end
 end
