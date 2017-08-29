@@ -1,5 +1,5 @@
 class AnswerSet < ApplicationRecord
-	# associations
+  # associations
   has_many :answers 
   has_many :questions, through: :answers
   belongs_to :quiz
